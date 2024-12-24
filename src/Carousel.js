@@ -19,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       handleNextButton();
-    }, 3000);
+    }, 5000);
     return () => {
       clearTimeout(timer);
     };

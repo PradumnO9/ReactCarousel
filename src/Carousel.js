@@ -32,17 +32,27 @@ const Carousel = () => {
         onClick={handlePreviousButton}
         size={100}
       />
-      {data.map((url, index) => {
+      {data.map((d, index) => {
         return (
-          <img
-            key={url}
-            className={
-              "mt-6 w-1/2 h-[500px] object-contain " +
-              (activeImageIndex === index ? "block" : "hidden")
-            }
-            src={url}
-            alt="wallpaper"
-          />
+          <div>
+            <img
+              key={d.id}
+              className={
+                "mt-6 w-[800px] h-[500px] object-contain " +
+                (activeImageIndex === index ? "block" : "hidden")
+              }
+              src={d.imgUrl}
+              alt="wallpaper"
+            />
+            <p
+              className={
+                "text-center font-bold text-xl p-2 " +
+                (activeImageIndex === index ? "block" : "hidden")
+              }
+            >
+              {d.description}
+            </p>
+          </div>
         );
       })}
       <BsChevronCompactRight
